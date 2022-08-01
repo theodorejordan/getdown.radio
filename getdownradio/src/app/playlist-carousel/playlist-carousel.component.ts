@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-// import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
+import { PlaylistsService } from "../playlists.service";
 
 @Component({
     selector: 'pm-playlists',
@@ -8,6 +8,12 @@ import { Component } from "@angular/core";
 
 export class PlaylistCarouselComponent {
     headerTitle: string = "Latest Playlist";
+
+    constructor(private playlistData: PlaylistsService){
+        this.playlistData.getData().subscribe(data => {
+          console.log(data)
+        })
+    }
 
     playlists: any[] =[
         {
