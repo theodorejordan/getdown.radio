@@ -18,14 +18,16 @@
                         <div class="carousel-item" *ngFor='let item of cutPlaylists; let isFirst = first' [ngClass]="{active:isFirst}">
                             <div class="row">
                                 <div class="col-md-4 mb-3" *ngFor='let playlist of item'>
-                                    <div class="card-body bg-dark text-white" id='cardDark'>
-                                        <img class="img-fluid" alt="100%x280" [src]="playlist.coverUrl">
+                                    <a href="https://www.lequipe.fr/" target="_blank" class="custom-card">
+                                    <div class="card-body text-black">
+                                        <img class="card-img img-fluid" alt="100%x280" [src]="playlist.coverUrl">
                                         <div class="card-img-overlay">
                                           <h5 class="card-hover-title">{{playlist.playlistTitle}}</h5>
                                           <p class="card-hover-text">{{playlist.playlistDescription}}</p>
                                           <p class="card-hover-text">{{playlist.trackCount}} tracks</p>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

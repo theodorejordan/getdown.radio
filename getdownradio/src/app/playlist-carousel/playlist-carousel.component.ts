@@ -41,7 +41,7 @@ export class PlaylistCarouselComponent {
                         playlistId: value.id,
                         coverUrl: value.attributes['cover-url'],
                         playlistTitle: value.attributes.title,
-                        playlistDescription: value.attributes.description,
+                        playlistDescription: value.attributes.description.replace("</p>", "").substring(3),
                         trackCount: value.attributes['tracks-count']
                     }
 
