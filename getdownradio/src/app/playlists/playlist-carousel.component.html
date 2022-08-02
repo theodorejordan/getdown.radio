@@ -18,7 +18,7 @@
                         <div class="carousel-item" *ngFor='let item of cutPlaylists; let isFirst = first' [ngClass]="{active:isFirst}">
                             <div class="row">
                                 <div class="col-md-4 mb-3" *ngFor='let playlist of item'>
-                                    <a href="https://www.lequipe.fr/" target="_blank" class="custom-card">
+                                    <a [routerLink]="['/playlists', playlist.playlistId]" class="custom-card">
                                     <div class="card-body text-black" >
                                         <img class="card-img img-fluid" alt="100%x280" [src]="playlist.coverUrl">
                                         <div class="card-img-overlay" style="padding-left: 45px; padding-top: 30px; width: 90%">

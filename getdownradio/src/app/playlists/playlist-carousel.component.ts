@@ -3,7 +3,6 @@ import { PlaylistsService } from "../playlists.service";
 import { IPlaylist } from "./playlist";
 
 @Component({
-    selector: 'pm-playlists',
     templateUrl: './playlist-carousel.component.html',
     styleUrls:['./playlist-carousel.component.css']
 })
