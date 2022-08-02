@@ -15,7 +15,7 @@ import { PlaylistsService } from './playlists.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [ PlaylistsService ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

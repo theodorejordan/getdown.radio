@@ -10,15 +10,13 @@ import { map } from 'rxjs';
 })
 
 export class PlaylistCarouselComponent {
-    headerTitle: string = "Latest Playlist";
-
-    constructor(private playlistData: PlaylistsService){ }
+    headerTitle: string = "Latest Playlists";
 
     playlistsRaw: any[] = [];
-
     playlistsInter: IPlaylist[] = [];
-
     cutPlaylists: IPlaylist[][]= [[]];
+
+    constructor(private playlistData: PlaylistsService){ }
 
     chunk(arr: IPlaylist[], chunkSize: number) {
         let R= [];
@@ -29,9 +27,7 @@ export class PlaylistCarouselComponent {
     }
 
     ngOnInit(){
-        this.playlistData.getData().subscribe(
-            (data: any) =>
-            {
+        this.playlistData.getData().subscribe( (data: any) => {
                 this.playlistsRaw = (data as any).data;
 
                 console.log(this.playlistsRaw)
