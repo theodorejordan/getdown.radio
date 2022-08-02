@@ -17,6 +17,16 @@ export class PlaylistsService {
     )
   }
 
+  getTracks(playlistId: string | undefined): Observable<any> {
+    let url = "https://cms.getup.radio/api/v1/playlists/" + playlistId + "?fetch=tracks";
+
+    console.log(url)
+
+    return this.http.get(url).pipe(
+      catchError(this.handleError)
+    )
+  }
+
   private handleError(err: HttpErrorResponse) {
     let errorMessage = 'ay ay ay moosey';
     if(err.error instanceof ErrorEvent) {
