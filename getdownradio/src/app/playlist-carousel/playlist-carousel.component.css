@@ -1,0 +1,18 @@
+.card-hover-text{
+    display:none;
+}
+
+.card-hover-title{
+    display:none;
+}
+
+.card-body:hover .card-text{
+    display:none;
+}
+.card-body:hover .card-hover-text{
+    display:block;
+}
+.card-body:hover .card-hover-title{
+    display: block;
+}
+

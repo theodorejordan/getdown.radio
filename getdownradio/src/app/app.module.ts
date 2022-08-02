@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PlaylistCarouselComponent } from './playlist-carousel/playlist-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlaylistsService } from './playlists.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ PlaylistsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
