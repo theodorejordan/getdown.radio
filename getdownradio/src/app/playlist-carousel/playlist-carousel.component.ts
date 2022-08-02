@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { PlaylistsService } from "../playlists.service";
 import { IPlaylist } from "./playlist";
-import { map } from 'rxjs';
 
 @Component({
     selector: 'pm-playlists',
@@ -16,7 +15,7 @@ export class PlaylistCarouselComponent {
     playlistsInter: IPlaylist[] = [];
     cutPlaylists: IPlaylist[][]= [[]];
 
-    constructor(private playlistData: PlaylistsService){ }
+    constructor(private playlistData: PlaylistsService) { }
 
     chunk(arr: IPlaylist[], chunkSize: number) {
         let R= [];
