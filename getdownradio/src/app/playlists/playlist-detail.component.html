@@ -1,5 +1,16 @@
 <div class='card'>
     <div class='card-header'>
+        <button type="button" class='btn btn-primary' style='width: 80px' (click)='onBack()'>Retour</button>
+    </div>
+    <div class='card-body'>
         {{pageTitle}}
+    </div>
+    <div class="card-body text-black" >
+        <img class="card-img img-fluid" alt="100%x280" [src]="playlist?.coverUrl">
+        <div class="card-img-overlay" style="padding-left: 45px; padding-top: 30px; width: 90%">
+          <h5 class="card-hover-title">{{playlist?.playlistTitle}}</h5>
+          <p class="card-hover-text">{{playlist?.playlistDescription}}</p>
+          <p class="card-hover-text">{{playlist?.trackCount}} tracks</p>
+        </div>
     </div>
 </div>

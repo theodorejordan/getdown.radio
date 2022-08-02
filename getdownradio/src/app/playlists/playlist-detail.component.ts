@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
+import { IPlaylist } from './playlist';
 
 @Component({
   templateUrl: './playlist-detail.component.html',
@@ -7,13 +8,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlaylistDetailComponent implements OnInit {
   pageTitle: string = 'Playlist Detail';
+  playlist?: IPlaylist | undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {  }
 
   ngOnInit(): void {
-    const id = String(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.activatedRoute.snapshot.paramMap.get('id'));
 
     this.pageTitle += `: + ${id}`;
+
+    // this.activatedRoute.data.subscribe( data => {
+    //   console.log(data)
+    // })
+
+    this.playlist = history.state.data.obj;
+
+    console.log(this.playlist)
   }
 
+  onBack(): void {
+    this.router.navigate(['/playlists']);
+  }
 }

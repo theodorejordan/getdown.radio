@@ -13,7 +13,6 @@ export class PlaylistsService {
     let url = "https://cms.getup.radio/api/v1/playlists?include=genres";
 
     return this.http.get(url).pipe(
-      tap(data => console.log('All', JSON.stringify(data))),
       catchError(this.handleError)
     )
   }
