@@ -3,5 +3,6 @@ export interface IPlaylist {
     coverUrl: string,
     playlistTitle: string,
     playlistDescription: string,
+    playlistLength: string,
     trackCount: number
 }

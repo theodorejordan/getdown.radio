@@ -12,7 +12,7 @@
                     <div class="col-lg-8">
                         <h5 class="card-hover-title">{{playlist?.playlistTitle}}</h5>
                         <p class="card-hover-text">{{playlist?.playlistDescription}}</p>
-                        <p class="card-hover-text">{{playlist?.trackCount}} tracks</p>                  
+                        <p class="card-hover-text"><b>{{playlist?.trackCount}} tracks - {{playlist?.playlistLength}}</b></p>                  
                     </div>
                 </div>
             </div>
@@ -28,15 +28,11 @@
                 </thead>
                 <tbody *ngFor='let track of tracksClean'>
                   <tr>
-                    <th scope="row" style="padding-top: 30px;">{{track.trackPosition}}</th>
-                    <td style="padding-top: 30px;">{{track.trackName}}</td>
-                    <td style="padding-top: 30px;">{{track.trackArtists}}</td>
-                    <td style="padding-top: 30px;">{{track.trackLength}}</td>
-                    <td>
-                        <audio controls>
-                        <source [src]="track.preview" type="audio/ogg">
-                        </audio> 
-                    </td>
+                    <th scope="row" style="padding-top: 25px;">{{track.trackPosition}}</th>
+                    <td style="padding-top: 25px;">{{track.trackName}}</td>
+                    <td style="padding-top: 25px;">{{track.trackArtists}}</td>
+                    <td style="padding-top: 25px;">{{track.trackLength}}</td>
+                    <td><audio controls> <source [src]="track.preview" type="audio/ogg"> </audio> </td>
                   </tr>
                 </tbody>
               </table>

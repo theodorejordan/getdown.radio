@@ -18,7 +18,7 @@
 
 .card-img {
     transition: all 1s ease;
-    -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
+    -webkit-filter: blur(0px);
     filter: blur(0px) brightness(100%) opacity(100%)
 }
 

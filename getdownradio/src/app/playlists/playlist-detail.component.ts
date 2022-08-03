@@ -18,18 +18,10 @@ export class PlaylistDetailComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private playlistTracks: PlaylistsService) {  }
 
   ngOnInit(): void {
-    const id = String(this.activatedRoute.snapshot.paramMap.get('id'));
-
-    this.pageTitle += `: + ${id}`;
-
     this.playlist = history.state.data.obj;
-
-    console.log(this.playlist)
 
     this.playlistTracks.getTracks(this.playlist?.playlistId).subscribe( (data: any) => {
         this.tracksRaw = (data as any).data.attributes.tracks;
-      
-        console.log(this.tracksRaw)
 
         this.tracksRaw.forEach( (value) => {
           let newTrack: ITrack = {

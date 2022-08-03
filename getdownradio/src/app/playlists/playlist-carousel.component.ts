@@ -28,14 +28,13 @@ export class PlaylistCarouselComponent {
         this.playlistData.getData().subscribe( (data: any) => {
                 this.playlistsRaw = (data as any).data;
 
-                console.log(this.playlistsRaw)
-
                 this.playlistsRaw.forEach( (value) => {
                     let newPlaylist: IPlaylist = {
                         playlistId: value.id,
                         coverUrl: value.attributes['cover-url'],
                         playlistTitle: value.attributes.title,
                         playlistDescription: value.attributes.description.replace("</p>", "").substring(3),
+                        playlistLength: this.secToTime(value.attributes.length),
                         trackCount: value.attributes['tracks-count']
                     }
 
@@ -46,5 +45,13 @@ export class PlaylistCarouselComponent {
                 console.log(this.cutPlaylists)
             }
         );
+    }
+
+    secToTime(secondes: number): string {
+        let hours  = Math.floor(secondes / 3600);
+        let minutes = Math.floor((secondes - hours * 3600) / 60);
+        let sec = secondes - hours * 3600 - minutes * 60;
+
+        return (hours > 0 ? hours : " ") + "h" + minutes + "m" + sec;
     }
 }
