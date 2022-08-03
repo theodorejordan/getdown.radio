@@ -6,26 +6,40 @@
         <div class='card-body'>
             <div class="container">
                 <div class="row">
-                <div class="col col-lg-4">
-                    <img class="card-img img-fluid" alt="80%x200" [src]="playlist?.coverUrl">
-                    One of three columnsaaaOne of three columnsaaaOne of three columnsaaaOne of three columnsaaaOne of three columnsaaaOne of three columnsaaaOne of three columnsaaa
-                </div>
-                <div class="col-lg-8">
-                    <h5 class="card-hover-title">{{playlist?.playlistTitle}}</h5>
-                    <p class="card-hover-text">{{playlist?.playlistDescription}}</p>
-                    <p class="card-hover-text">{{playlist?.trackCount}} tracks</p>
-                </div>
+                    <div class="col col-lg-4">
+                        <img class="card-img img-fluid" alt="80%x200" [src]="playlist?.coverUrl">
+                    </div>
+                    <div class="col-lg-8">
+                        <h5 class="card-hover-title">{{playlist?.playlistTitle}}</h5>
+                        <p class="card-hover-text">{{playlist?.playlistDescription}}</p>
+                        <p class="card-hover-text">{{playlist?.trackCount}} tracks</p>                  
+                    </div>
                 </div>
             </div>
+            <table class="table table-hover align-middle mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Morceau</th>
+                    <th scope="col">Artiste.s</th>
+                    <th scope="col">Durée</th>
+                    <th scope="col">Preview</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor='let track of tracksClean'>
+                  <tr>
+                    <th scope="row" style="padding-top: 30px;">{{track.trackPosition}}</th>
+                    <td style="padding-top: 30px;">{{track.trackName}}</td>
+                    <td style="padding-top: 30px;">{{track.trackArtists}}</td>
+                    <td style="padding-top: 30px;">{{track.trackLength}}</td>
+                    <td>
+                        <audio controls>
+                        <source [src]="track.preview" type="audio/ogg">
+                        </audio> 
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
-        <!-- <div class="card-body text-black" >
-            <img class="card-img img-fluid" alt="100%x280" [src]="playlist?.coverUrl">
-            <div class="card-img-overlay" style="padding-left: 45px; padding-top: 30px; width: 90%">
-            <h5 class="card-hover-title">{{playlist?.playlistTitle}}</h5>
-            <p class="card-hover-text">{{playlist?.playlistDescription}}</p>
-            <p class="card-hover-text">{{playlist?.trackCount}} tracks</p>
-            </div>
-        </div> -->
-
-    </div>
+    </div> 
 </div>
