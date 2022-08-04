@@ -27,6 +27,7 @@ export class PlaylistsService {
 
   private handleError(err: HttpErrorResponse) {
     let errorMessage = 'ay ay ay moosey';
+
     if(err.error instanceof ErrorEvent) {
       errorMessage = `An error occured: ${err.error.message}`;
     } else {

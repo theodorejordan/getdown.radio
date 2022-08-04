@@ -52,6 +52,6 @@ export class PlaylistCarouselComponent {
         let minutes = Math.floor((secondes - hours * 3600) / 60);
         let sec = secondes - hours * 3600 - minutes * 60;
 
-        return (hours > 0 ? hours : " ") + "h" + minutes + "m" + sec;
+        return (hours > 0 ? hours + "h": " ") + minutes + "m" + sec + "s";
     }
 }
